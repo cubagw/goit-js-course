@@ -45,17 +45,17 @@ alert(message);
 
 const credits = 23580;
 const pricePerDroid = 3000;
-const quantity = 3;
+const quantity = 8;
 
 const totalPrice = pricePerDroid * quantity;
 let restOfCredits = credits - totalPrice;
 
 if (totalPrice > credits) {
-  restOfCredits = 'Недостаточно средств на счету!';
+  console.log('Недостаточно средств на счету!');
 } else
-  restOfCredits = `Вы купили ${quantity} дроидов, на счету осталось ${restOfCredits}  кредитов.`;
-
-console.log(restOfCredits);
+  console.log(
+    `Вы купили ${quantity} дроидов, на счету осталось ${restOfCredits}  кредитов.`,
+  );
 
 // ============================================================================================================================================
 
@@ -76,50 +76,56 @@ console.log(restOfCredits);
 //     ямайка - 120 кредитов
 
 let country = prompt('Укажите страну доставки');
-let price;
+const chinaShipp = 100;
+const southAmericaShipp = 250;
+const australiaShipp = 170;
+const indiaShipp = 80;
+const jamaicaShipp = 120;
 
 if (country) {
   country = country.toLowerCase().trim();
 }
 
 switch (country) {
+  case null:
+    console.log('Вы не ввели название страны');
+    break;
+  case '':
+    console.log('Вы не ввели название страны');
+    break;
+
   case 'китай':
-    price = '100 кредитов';
     console.log(
       `Доставка в ${country.charAt(0).toUpperCase() +
-        country.slice(1)} будет стоить ${price}`,
+        country.slice(1)} будет стоить ${chinaShipp} кредитов`,
     );
     break;
 
   case 'южная америка':
-    price = '250 кредитов';
     console.log(
       `Доставка в ${country.charAt(0).toUpperCase() +
-        country.slice(1)} будет стоить ${price}`,
+        country.slice(1)} будет стоить ${southAmericaShipp} кредитов`,
     );
     break;
 
   case 'австралия':
-    price = '170 кредитов';
     console.log(
       `Доставка в ${country.charAt(0).toUpperCase() +
-        country.slice(1)} будет стоить ${price}`,
+        country.slice(1)} будет стоить ${australiaShipp} кредитов`,
     );
     break;
 
   case 'индия':
-    price = '80 кредитов';
     console.log(
       `Доставка в ${country.charAt(0).toUpperCase() +
-        country.slice(1)} будет стоить ${price}`,
+        country.slice(1)} будет стоить ${indiaShipp} кредитов`,
     );
     break;
 
   case 'ямайка':
-    price = '120 кредитов';
     console.log(
       `Доставка в ${country.charAt(0).toUpperCase() +
-        country.slice(1)} будет стоить ${price}`,
+        country.slice(1)} будет стоить ${jamaicaShipp} кредитов`,
     );
     break;
 
