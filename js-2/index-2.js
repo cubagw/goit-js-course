@@ -64,10 +64,12 @@ do {
 
   if (askPassword === null) {
     break;
-  } else if (isFindPassword) {
+  }
+  if (isFindPassword) {
     alert('Добро пожаловать!');
     break;
-  } else if (attempts >= 1) {
+  }
+  if (attempts >= 1) {
     alert(`Неверный пароль, у вас осталось ${attempts} попыток`);
   } else {
     alert('У вас закончились попытки, аккаунт заблокирован!');
