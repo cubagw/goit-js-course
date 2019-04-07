@@ -18,20 +18,23 @@ let total = 0;
 do {
   userInput = prompt('Укажите число');
 
-  if (isNaN(userInput)) {
+  if (userInput) {
+    userInput = userInput.trim();
+  }
+  if (Number.isNaN(Number(userInput))) {
     alert('Было введено не число, попробуйте еще раз');
     continue;
   } else if (userInput === '') {
     continue;
   } else {
-    numbers.push(userInput);
+    numbers.push(Number(userInput));
   }
 } while (userInput !== null);
 
-for (const userNamber of numbers) {
-  total += Number(userNamber);
-}
-if (numbers.length !== 1) {
+if (numbers.length > 1) {
+  for (const userNamber of numbers) {
+    total += userNamber;
+  }
   console.log(`Общая сумма чисел равна ${total}`);
 }
 
@@ -53,25 +56,22 @@ if (numbers.length !== 1) {
 //     Продолжать запрашивать пароль до тех пор, пока пользователь не введет существующий пароль, не кончатся попытки или пока пользователь не нажмет Cancel в prompt.
 
 const passwords = ['qwerty', '111qwe', '123123', 'r4nd0mp4zzw0rd'];
-let attempts = 3;
+let attemptsLeft = 3;
+let input;
 
-do {
-  const askPassword = prompt('Введите свой пароль');
-
-  let isFindPassword = passwords.includes(askPassword);
-
-  attempts -= 1;
-
-  if (askPassword === null) {
+while (attemptsLeft !== 0) {
+  input = prompt('Введите пароль');
+  attemptsLeft -= 1;
+  if (input === null) {
     break;
   }
-  if (isFindPassword) {
+  if (passwords.includes(input)) {
     alert('Добро пожаловать!');
     break;
   }
-  if (attempts >= 1) {
-    alert(`Неверный пароль, у вас осталось ${attempts} попыток`);
+  if (attemptsLeft >= 1) {
+    alert(`Неверный пароль, у вас осталось ${attemptsLeft} попыток`);
   } else {
     alert('У вас закончились попытки, аккаунт заблокирован!');
   }
-} while (attempts >= 1);
+}
