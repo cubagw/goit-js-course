@@ -21,17 +21,19 @@ do {
   if (userInput) {
     userInput = userInput.trim();
   }
-  if (Number.isNaN(Number(userInput))) {
+  if (Number.isNaN(+userInput)) {
     alert('Было введено не число, попробуйте еще раз');
     continue;
-  } else if (userInput === '') {
+  } else if (userInput === '' || userInput === null) {
     continue;
   } else {
-    numbers.push(Number(userInput));
+    console.log(`что попало в userInput? --`, userInput);
+    numbers.push(+userInput);
+    console.log(`что попало в numbers? --`, numbers);
   }
 } while (userInput !== null);
 
-if (numbers.length > 1) {
+if (numbers.length) {
   for (const userNamber of numbers) {
     total += userNamber;
   }
@@ -59,7 +61,7 @@ const passwords = ['qwerty', '111qwe', '123123', 'r4nd0mp4zzw0rd'];
 let attemptsLeft = 3;
 let input;
 
-while (attemptsLeft !== 0) {
+while (attemptsLeft) {
   input = prompt('Введите пароль');
   attemptsLeft -= 1;
   if (input === null) {
@@ -69,7 +71,7 @@ while (attemptsLeft !== 0) {
     alert('Добро пожаловать!');
     break;
   }
-  if (attemptsLeft >= 1) {
+  if (attemptsLeft) {
     alert(`Неверный пароль, у вас осталось ${attemptsLeft} попыток`);
   } else {
     alert('У вас закончились попытки, аккаунт заблокирован!');
