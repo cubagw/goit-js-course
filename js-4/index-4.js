@@ -77,14 +77,12 @@ const notepad = {
      * обновить заметку
      * Возвращает: обновленную заметку
      */
-    // if (this.findNoteById(id) === id) {
-    //   const keys = Object.keys(this.notes)
-    //   for(const key of keys);
-    //   const names = Object.keys(updatedContent)
-    //   for(const name of names);
-    //   if(name === key){
-    //   }
-    // }
+    const objForId = this.findNoteById(id);
+    const newObj = { ...objForId, ...updatedContent };
+    this.deleteNote(id);
+    this.notes.push(newObj);
+
+    return newObj;
   },
   updateNotePriority(id, priority) {
     /*
@@ -93,7 +91,12 @@ const notepad = {
      * Принимает: идентификатор заметки и ее новый приоритет
      * Возвращает: обновленную заметку
      */
+
+    const objForId = this.findNoteById(id);
+    objForId.priority = priority;
+    return objForId;
   },
+
   filterNotesByQuery(query) {
     /*
      * Фильтрует массив заметок по подстроке query.
@@ -102,7 +105,26 @@ const notepad = {
      * Принимает: подстроку для поиска в title и body заметки
      * Возвращает: новый массив заметок, контент которых содержит подстроку
      */
+
+    const newArr = [];
+    for (const note of this.notes) {
+      if (
+        note.title.toLowerCase().includes(query) ||
+        note.body.toLowerCase().includes(query)
+      ) {
+        newArr.push(note);
+      }
+    }
+    return newArr;
+
+    //     return this.notes.filter(function(elem) {
+    //       return (
+    //         elem.title.toLowerCase().includes(query) ||
+    //         elem.body.toLowerCase().includes(query)
+    //       );
+    //     });
   },
+
   filterNotesByPriority(priority) {
     /*
      * Фильтрует массив заметок по значению приоритета
@@ -111,6 +133,13 @@ const notepad = {
      * Принимает: приоритет для поиска в свойстве priority заметки
      * Возвращает: новый массив заметок с подходящим приоритетом
      */
+    const newArr = [];
+    for (const note of this.notes) {
+      if (note.priority === priority) {
+        newArr.push(note);
+      }
+    }
+    return newArr;
   },
 };
 
