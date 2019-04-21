@@ -79,10 +79,8 @@ const notepad = {
      */
     const objForId = this.findNoteById(id);
     const newObj = { ...objForId, ...updatedContent };
-    this.deleteNote(id);
-    this.notes.push(newObj);
 
-    return newObj;
+    return objForId;
   },
   updateNotePriority(id, priority) {
     /*
