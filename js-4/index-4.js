@@ -77,10 +77,14 @@ const notepad = {
      * обновить заметку
      * Возвращает: обновленную заметку
      */
-    const objForId = this.findNoteById(id);
-    const newObj = { ...objForId, ...updatedContent };
+    // const objForId = this.findNoteById(id);
 
-    return objForId;
+    // const newObj = { ...objForId, ...updatedContent };
+    // console.log('newObj: ', newObj);
+    // return newObj;
+
+    const objForId = this.findNoteById(id);
+    Object.assign(objForId, objForId, updatedContent);
   },
   updateNotePriority(id, priority) {
     /*
