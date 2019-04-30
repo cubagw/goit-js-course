@@ -119,12 +119,12 @@ const notepad = {
     }
     return newArr;
 
-    //     return this.notes.filter(function(elem) {
-    //       return (
-    //         elem.title.toLowerCase().includes(query) ||
-    //         elem.body.toLowerCase().includes(query)
-    //       );
-    //     });
+    // return this.notes.filter(function(elem) {
+    //   return (
+    //     elem.title.toLowerCase().includes(query) ||
+    //     elem.body.toLowerCase().includes(query)
+    //   );
+    // });
   },
 
   filterNotesByPriority(priority) {

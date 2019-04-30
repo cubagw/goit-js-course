@@ -6,7 +6,7 @@
 // Конструктор Notepad при инициализации принимает массив заметок
 const Notepad = function Notepad(notes = []) {
   // Перенеси свойства и методы объекта notepad в конструктор
-  this.notes = [];
+  this.notes = notes;
 
   this.getNotes = function() {
     return this.notes;
@@ -137,6 +137,7 @@ const notepad = new Notepad(initialNotes);
 /*
  * Смотрю что у меня в заметках после инициализации
  */
+
 console.log('Все текущие заметки: ', notepad.getNotes());
 
 /*
@@ -158,7 +159,10 @@ notepad.saveNote({
   priority: Notepad.Priority.LOW,
 });
 
-console.log('Все текущие заметки: ', notepad.getNotes());
+console.log(
+  'Все текущие заметки после добавления id-3 и id-4: ',
+  notepad.getNotes(),
+);
 
 /*
  * Зима уже близко, пора поднять приоритет на покупку одежды
