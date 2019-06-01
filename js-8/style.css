@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.form {
+  width: 50%;
+  border: 1px solid #cccccc;
+  margin: 0 auto;
+  background: rgb(255, 251, 247);
+  padding: 20px;
+}
+
+.formTitle {
+  padding-bottom: 20px;
+}
+
+.form-sectionOfQuestion {
+  border: 2px solid #575656;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.form-answerLabel {
+  padding: 10px;
+}
+
+.form-input {
+  margin-right: 10px;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  background: rgb(198, 201, 199);
+  font-size: 24px;
+  padding: 10px 26px;
+  display: block;
+  margin: 0 auto;
+
+  font-family: sans-serif;
+}
