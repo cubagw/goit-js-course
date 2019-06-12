@@ -1,6 +1,8 @@
 'use strict';
 import quizData from './quiz-data.js';
 
+console.log(quizData);
+
 // ------СОЗДАНИЕ РАЗМЕТКИ----- //
 
 const form = document.querySelector('.form');
