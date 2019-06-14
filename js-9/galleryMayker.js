@@ -50,11 +50,13 @@ function handelCloseModal(e) {
     return;
   }
   lightbox.classList.remove('is-open');
+  lightboxImage.removeAttribute('src');
 }
 
 function handelCloseModalButton() {
   lightbox.classList.remove('is-open');
   window.removeEventListener('keydown', handelKeyPress);
+  lightboxImage.removeAttribute('src');
 }
 
 function handelKeyPress(e) {
