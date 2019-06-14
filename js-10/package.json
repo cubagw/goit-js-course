@@ -2,14 +2,20 @@
   "name": "js-10",
   "version": "1.0.0",
   "description": "",
-  "main": "pac.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node pac.js"
+    "start": "node src/index.js",
+    "build": "babel src -d lib"
   },
   "keywords": [],
-  "author": "",
+  "author": "Dmytro Vitenko",
   "license": "ISC",
   "dependencies": {
     "shortid": "^2.2.14"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5"
   }
 }
