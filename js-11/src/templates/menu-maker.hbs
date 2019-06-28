@@ -1,0 +1,47 @@
+{{!-- {
+    "id": "j2k8U1jZd",
+    "name": "Классический греческий салат ",
+    "description": "Это рецепт из старой, привезенной из Греции, кулинарной книги. Секрет салата — свежайшие овощи и хорошая фета. Для салата используют только оливковое масло, а такие специи, как орегано и базилик, являются визитной карточкой греческой кухни.",
+    "image": "https://dietdo.ru/wp-content/uploads/2017/03/Grecheskiy-salat-retsept-klassicheskiy-s-foto-poshagovo-min.jpg",
+    "price": 350,
+    "ingredients": [
+      "Оливковое масло",
+      "Лимонный сок",
+      "Чеснок",
+      "Помидоры",
+      "Красный лук",
+      "Сыр фета",
+      "Маслины"
+    ]
+  }, --}}
+<li class="menu__item">
+    <div class="card">
+        <img src="{{image}}" alt="" class="card__image" />
+        <div class="card__content">
+            <h2 class="card__name">{{name}}</h2>
+            <p class="card__price">
+                <i class="material-icons">
+                    monetization_on
+                </i>
+                {{price}} кредитов
+            </p>
+
+            <p class="card__descr">
+                {{description}}
+            </p>
+
+            <ul class="tag-list">
+                {{#each ingredients}}
+                <li class="tag-list__item">{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <button class="card__button button">
+            <i class="material-icons button__icon">
+                shopping_cart
+            </i>
+            В корзину
+        </button>
+    </div>
+</li>
